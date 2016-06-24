@@ -10,8 +10,31 @@
 # All HVAC-originated signals
 #
 
-- FrontFanSpeed:
+- Zone:
+  type: String
+  enum: [ "None", "Front", "Rear", "Left", "Right" ]
+  description: HVAC Zones. 2C/4C
+
+- FanSpeed:
   type: UInt8
   min: 0
   max: 10
   description: Fan Speed
+  
+- AutoMode:
+  type: Boolean
+  description: HVAC Auto Mode. True = Auto On False = Auto OFF
+  
+- ACMode:
+  type: Boolean
+  description: AC Mode. True = AC ON False = AC OFF 
+
+- BlowerMode:
+  type: String
+  enum: [ "Auto", "ECO" , "Defog", "Defrost" ] 
+  description: Blower Control Mode. 
+  
+- AirFlowDirection:
+  type: String
+  enum: [ "FloorDuck", "FrontPannel", "BI-Level", "DefrostFloor" ]
+  description: Air Flow Direction
